@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 //docs.google.com/spreadsheets/d/1ggxeHqlsY17zsUGS5-N6RfrhhkTCLDRiSx39q0LuHHs/edit?gid=0#gid=0
 const GOOGLE_SHEETS_API_URL =
   "https://script.google.com/macros/s/AKfycbxJowOYVFrfKhJ6LRDOotAcKzKL8BPiDUx0zEoqs4DRa8XI7bZ--Ts_QVwu_2zpKnL-/exec"; // Replace with your Google Apps Script URL
@@ -14,7 +14,7 @@ function App() {
   }, []);
 
   // Function to update Google Sheets
-  const updateSheet = (newCount) => {
+  const updateSheet = (newCount: Number) => {
     fetch(GOOGLE_SHEETS_API_URL, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
